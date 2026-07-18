@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugene Gonzales - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-picture {
+            flex-shrink: 0;
+        }
+
+        .profile-picture img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .header-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .header-info a:hover {
+            opacity: 0.7;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .item-date {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .item-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .skill-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .highlight {
+            display: inline-block;
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .profile-picture img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-info {
+                align-items: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-date {
+                margin-top: 5px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        }
+
+        .print-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Profile Picture -->
+        <div class="header">
+            <div class="profile-picture">
+                <img src="./sponge.jpeg" alt="Eugene Josh M. Gonzales">
+            </div>
+            <div class="header-content">
+                <h1>Eugene Josh M. Gonzales</h1>
+                <p>Full Stack Developer</p>
+                <div class="header-info">
+                    <span>📧 eugenegonzales@gmail.com</span>
+                    <span>📱 09683610345</span>
+                    <span>📍 Angeles City</span>
+                    <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+                    <a href="https://github.com" target="_blank">🐙 GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p>Motivated and detail-oriented professional with strong communication, problem-solving, and organizational skills. Eager to contribute to a dynamic team while continuously learning and developing new skills. Dedicated to delivering high-quality work and providing excellent customer service.</p>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="section-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Senior Full Stack Developer</div>
+                            <div class="item-subtitle">Tech Company Inc.</div>
+                        </div>
+                        <div class="item-date">2022 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Led development of microservices architecture serving 100k+ users</li>
+                            <li>Improved application performance by 40% through optimization</li>
+                            <li>Mentored 3 junior developers and conducted code reviews</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Full Stack Developer</div>
+                            <div class="item-subtitle">Digital Solutions Ltd.</div>
+                        </div>
+                        <div class="item-date">2020 - 2022</div>
+                    </div>
+                    <div class="item-description">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Developed and maintained 5+ web applications using React and Node.js</li>
+                            <li>Implemented RESTful APIs and integrated third-party services</li>
+                            <li>Reduced deployment time by 50% using Docker and CI/CD pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Junior Developer</div>
+                            <div class="item-subtitle">StartUp Co.</div>
+                        </div>
+                        <div class="item-date">2019 - 2020</div>
+                    </div>
+                    <div class="item-description">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Built responsive web pages using HTML, CSS, and JavaScript</li>
+                            <li>Collaborated with design team to implement UI/UX mockups</li>
+                            <li>Fixed bugs and maintained legacy codebase</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="section-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Bachelor of Science in Computer Science</div>
+                            <div class="item-subtitle">System Plus College Foundation</div>
+                        </div>
+                        <div class="item-date">2019</div>
+                    </div>
+                    <div class="item-description">
+                     Relevant Coursework: Web Development, Data Structures, Algorithms, Database Design
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Frontend</h4>
+                        <p>
+                            <span class="highlight">React</span>
+                            <span class="highlight">Vue.js</span>
+                            <span class="highlight">TypeScript</span>
+                            <span class="highlight">CSS/SCSS</span>
+                        </p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Backend</h4>
+                        <p>
+                            <span class="highlight">Node.js</span>
+                            <span class="highlight">Python</span>
+                            <span class="highlight">Express</span>
+                            <span class="highlight">REST APIs</span>
+                        </p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Database</h4>
+                        <p>
+                            <span class="highlight">PostgreSQL</span>
+                            <span class="highlight">MongoDB</span>
+                            <span class="highlight">Redis</span>
+                            <span class="highlight">Firebase</span>
+                        </p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>DevOps</h4>
+                        <p>
+                            <span class="highlight">Docker</span>
+                            <span class="highlight">Kubernetes</span>
+                            <span class="highlight">GitHub Actions</span>
+                            <span class="highlight">AWS</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+</body>
+</html>
